@@ -20,6 +20,11 @@ function addClass (id){
   document.getElementById(id).classList.add('hidden');
   return;
 }
+
+function getElementId(id){
+  return document.getElementById(id);
+  
+}
 // common function ends here
 
 
@@ -27,12 +32,21 @@ function addClass (id){
 
 
 document.getElementById("btn-history").addEventListener("click", function () {
-  const navSection = document.getElementById("nav-section");
 
-  const mainSection = document.getElementById("main-section");
-  const historyShown = document.getElementById("history-shown");
-  const btnHistory = document.getElementById("btn-history");
-  const btnDonation = document.getElementById("btn-donation");
+  // const navSection = document.getElementById("nav-section");
+  const navSection = getElementId('nav-section')
+
+  // const mainSection = document.getElementById("main-section");
+  const mainSection = getElementId('main-section')
+  
+  // const historyShown = document.getElementById("history-shown");
+  const historyShown = getElementId('history-shown')
+
+  // const btnHistory = document.getElementById("btn-history");
+  const btnHistory = getElementId('btn-history')
+
+  // const btnDonation = document.getElementById("btn-donation");
+  const btnDonation =getElementId('btn-donation')
 
   navSection.classList.add("hidden");
   mainSection.classList.add("hidden");
@@ -43,12 +57,18 @@ document.getElementById("btn-history").addEventListener("click", function () {
 });
 
 document.getElementById("btn-donation").addEventListener("click", function () {
-  const navSection = document.getElementById("nav-section");
 
-  const mainSection = document.getElementById("main-section");
-  const historyShown = document.getElementById("history-shown");
-  const btnHistory = document.getElementById("btn-history");
-  const btnDonation = document.getElementById("btn-donation");
+  const navSection = getElementId('nav-section')
+  const mainSection = getElementId('main-section')
+  const historyShown = getElementId('history-shown')
+  const btnHistory = getElementId('btn-history')
+  const btnDonation =getElementId('btn-donation')
+
+  // const navSection = document.getElementById("nav-section");
+  // const mainSection = document.getElementById("main-section");
+  // const historyShown = document.getElementById("history-shown");
+  // const btnHistory = document.getElementById("btn-history");
+  // const btnDonation = document.getElementById("btn-donation");
 
   navSection.classList.remove("hidden");
   mainSection.classList.remove("hidden");
@@ -103,7 +123,8 @@ const newDiv = document.createElement('div')
 newDiv.innerHTML=`<div class="flex flex-col gap-4 ">
             <div class="p-5 border rounded-2xl">
                 <h3>${donationAmount} Taka is Donated for famine-2024 at Noakhali -Feni, Bangladesh</h3>
-                <p>${new Date().toLocaleDateString()}</p>
+                
+                 <p>Date: ${new Date()}</p>
             </div>
           `
 const container = document.getElementById('new-div-history');
@@ -176,7 +197,7 @@ document.getElementById('main-balance-2').innerText= newBalance.toFixed(2);
     newDiv.innerHTML=`<div class="flex flex-col gap-4">
                 <div class="p-5 border rounded-2xl">
                     <h3>${donationAmount} Taka is Donated for Flood Relief in Feni,Bangladesh</h3>
-                    <p>${new Date().toLocaleDateString()}</p>
+                     <p>Date: ${new Date()}</p>
                 </div>
               `
     const container = document.getElementById('new-div-history');
@@ -247,7 +268,7 @@ document.getElementById('main-balance-2').innerText= newBalance.toFixed(2);
     newDiv.innerHTML=`<div class="flex flex-col gap-4 ">
                 <div class="p-5 border rounded-2xl">
                     <h3>${donationAmount} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</h3>
-                    <p>${new Date().toLocaleDateString()}</p>
+                     <p>Date: ${new Date()}</p>
                 </div>
               `
     const container = document.getElementById('new-div-history');
